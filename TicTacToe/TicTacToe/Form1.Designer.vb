@@ -36,6 +36,7 @@ Partial Class Form1
         Me.restartbutton = New System.Windows.Forms.Button()
         Me.playerdisplay = New System.Windows.Forms.TextBox()
         Me.winnerdisplay = New System.Windows.Forms.Label()
+        Me.tiedisplay = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -178,18 +179,36 @@ Partial Class Form1
         '
         'winnerdisplay
         '
+        Me.winnerdisplay.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.winnerdisplay.AutoSize = True
         Me.winnerdisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.winnerdisplay.Location = New System.Drawing.Point(119, 139)
+        Me.winnerdisplay.Location = New System.Drawing.Point(130, 142)
         Me.winnerdisplay.Name = "winnerdisplay"
         Me.winnerdisplay.Size = New System.Drawing.Size(0, 73)
         Me.winnerdisplay.TabIndex = 22
+        Me.winnerdisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'tiedisplay
+        '
+        Me.tiedisplay.AutoSize = True
+        Me.tiedisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tiedisplay.Location = New System.Drawing.Point(183, 142)
+        Me.tiedisplay.Name = "tiedisplay"
+        Me.tiedisplay.Size = New System.Drawing.Size(121, 73)
+        Me.tiedisplay.TabIndex = 23
+        Me.tiedisplay.Text = "Tie"
+        Me.tiedisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.tiedisplay.Visible = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Navy
         Me.ClientSize = New System.Drawing.Size(484, 500)
+        Me.Controls.Add(Me.tiedisplay)
         Me.Controls.Add(Me.winnerdisplay)
         Me.Controls.Add(Me.playerdisplay)
         Me.Controls.Add(Me.restartbutton)
@@ -227,4 +246,5 @@ Partial Class Form1
     Friend WithEvents restartbutton As Button
     Friend WithEvents playerdisplay As TextBox
     Friend WithEvents winnerdisplay As Label
+    Friend WithEvents tiedisplay As Label
 End Class

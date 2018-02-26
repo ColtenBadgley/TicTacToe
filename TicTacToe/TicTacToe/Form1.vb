@@ -87,10 +87,11 @@
                         winnerdisplay.Text = "O Wins!"
                         Call disablebutton(False)
                     Case Else
-                        winnerdisplay.Text = "Tie"
+                        tiedisplay.Visible = True
                         Call disablebutton(False)
                 End Select
         End Select
+        Call cursorselect()
     End Sub
     Sub ResetButton(ByVal boi As Object)
         boi.Text = ""
@@ -119,6 +120,11 @@
         End If
         winnerdisplay.Text = ""
         Call disablebutton(True)
+        If tiedisplay.Visible = True Then
+            tiedisplay.Visible = False
+        Else
+            tiedisplay.Visible = False
+        End If
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         playerdisplay.Text = "X's Turn"
@@ -161,6 +167,16 @@
         Button9.Enabled = what
     End Sub
 
+
+    Sub cursorselect()
+        If currentTurn = False Then
+            myCursor = New Cursor(myIcon.Handle)
+            Cursor = myCursor
+        Else
+            myCursor = New Cursor(myIcon2.Handle)
+            Cursor = myCursor
+        End If
+    End Sub
 
 End Class
 
